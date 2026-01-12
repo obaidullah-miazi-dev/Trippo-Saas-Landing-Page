@@ -4,6 +4,7 @@ import Container from './Container';
 import Button from '../ui/Button';
 import Icon from '../shared/Icon';
 import { navLinks } from '../../data/navLinks';
+import { AnimatedThemeToggler } from '../ui/animated-theme-toggler';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +48,8 @@ const Navbar = () => {
 
                     {/* CTA & Mobile Toggle */}
                     <div className="flex items-center gap-4">
-                        <div className="hidden md:block">
+                        <div className="hidden md:flex items-center gap-4">
+                            <AnimatedThemeToggler />
                             <Button variant="primary" size="sm">Get Started</Button>
                         </div>
 
@@ -75,6 +77,9 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <Button variant="primary" className="w-full justify-center">Get Started</Button>
+                            <div className="flex justify-center pt-4 border-t border-slate-800">
+                                <AnimatedThemeToggler />
+                            </div>
                         </div>
                     </div>
                 )}
