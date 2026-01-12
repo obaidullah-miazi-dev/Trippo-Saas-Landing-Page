@@ -1,0 +1,15 @@
+// src/components/layout/Container.jsx
+import React from 'react';
+
+/**
+ * Centralized container component to control max-width and padding.
+ */
+const Container = ({ children, className = '' }) => {
+    return (
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
+            {children}
+        </div>
+    );
+};
+
+export default Container;
