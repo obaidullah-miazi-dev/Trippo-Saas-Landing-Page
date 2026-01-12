@@ -46,13 +46,8 @@ const About = () => {
                             {/* Abstract Code/Tech Visual */}
                             <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 opacity-50"></div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-3/4 h-3/4 bg-slate-950 rounded-xl border border-slate-800 p-6 relative overflow-hidden">
-                                    <div className="space-y-3">
-                                        <div className="h-2 w-1/3 bg-slate-800 rounded"></div>
-                                        <div className="h-2 w-2/3 bg-slate-800 rounded"></div>
-                                        <div className="h-2 w-1/2 bg-slate-800 rounded"></div>
-                                        <div className="h-2 w-3/4 bg-slate-800 rounded"></div>
-                                    </div>
+                                <div className="w-3/4 h-3/4 bg-slate-950 rounded-xl relative overflow-hidden">
+                                    <img src="https://i.ibb.co.com/7NvHcvX6/ai-generated-1768181474327.jpg" alt="" />
                                     <div className="absolute bottom-6 right-6">
                                         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center animate-bounce">
                                             <Icon name="Zap" className="w-6 h-6 text-primary" />
