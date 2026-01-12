@@ -2,7 +2,7 @@
 
 Trippo is a high-performance, visually stunning SaaS landing page built with modern web technologies. It features a sleek design, smooth animations, and a fully responsive layout to showcase your product effectively.
 
-Live Link : ![Trippo-Live-Preview](https://trippo-saas-landing-page.vercel.app)
+Live Link : [Trippo-Live-Preview](https://trippo-saas-landing-page.vercel.app)
 
 ![Trippo Preview](/public/website-preview.png)
 
