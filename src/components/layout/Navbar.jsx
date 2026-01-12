@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-md py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md py-4 border-b border-border' : 'bg-transparent py-6'
                 }`}
         >
             <Container>
@@ -30,7 +30,7 @@ const Navbar = () => {
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                             <img src="trippoLogo.png" alt="logo" />
                         </div>
-                        <span className="text-xl font-bold text-white tracking-tight">Trippo</span>
+                        <span className="text-xl font-bold text-foreground tracking-tight">Trippo</span>
                     </a>
 
                     {/* Desktop Nav */}
@@ -39,7 +39,7 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 {link.name}
                             </a>
@@ -54,7 +54,7 @@ const Navbar = () => {
                         </div>
 
                         <button
-                            className="md:hidden text-slate-300 hover:text-white"
+                            className="md:hidden text-muted-foreground hover:text-foreground"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
                             <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} />
@@ -64,7 +64,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950 border-b border-slate-800 p-4 animate-fade-in">
+                    <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-4 animate-fade-in">
                         <div className="flex flex-col gap-4">
                             {navLinks.map((link) => (
                                 <a
@@ -77,7 +77,7 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <Button variant="primary" className="w-full justify-center">Get Started</Button>
-                            <div className="flex justify-center pt-4 border-t border-slate-800">
+                            <div className="flex justify-center pt-4 border-t border-border">
                                 <AnimatedThemeToggler />
                             </div>
                         </div>

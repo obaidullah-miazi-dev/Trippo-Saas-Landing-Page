@@ -58,14 +58,14 @@ const Hero = () => {
                         </Badge>
                     </div>
 
-                    <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight opacity-0">
+                    <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight opacity-0">
                         Build faster with <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                             Intelligent Tools
                         </span>
                     </h1>
 
-                    <p ref={subtitleRef} className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed opacity-0">
+                    <p ref={subtitleRef} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed opacity-0">
                         Trippo provides the infrastructure you need to scale your application without the headache.
                         Focus on your code, we handle the rest.
                     </p>
@@ -81,8 +81,8 @@ const Hero = () => {
 
                     {/* Hero Image / Dashboard Preview */}
                     <div ref={visualRef} className="mt-20 relative opacity-0">
-                        <div className="rounded-xl bg-slate-900/50 border border-slate-800 p-2 shadow-2xl backdrop-blur-sm">
-                            <div className="rounded-lg overflow-hidden bg-slate-950 aspect-video relative">
+                        <div className="rounded-xl bg-card/50 border border-border p-2 shadow-2xl backdrop-blur-sm">
+                            <div className="rounded-lg overflow-hidden bg-card aspect-video relative">
                                 {/* Abstract UI Representation */}
                                 <div className="absolute inset-0 flex items-center justify-center text-slate-700">
                                     <div className="w-full h-full bg-gradient-to-br from-slate-900 to-slate-950 p-8 grid grid-cols-12 gap-4">
@@ -99,7 +99,8 @@ const Hero = () => {
                                     </div>
                                 </div>
                                 {/* Overlay Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-50"></div>
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-50"></div>
                             </div>
                         </div>
                         {/* Decorative Elements */}

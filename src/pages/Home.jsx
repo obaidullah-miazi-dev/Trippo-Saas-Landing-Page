@@ -11,7 +11,7 @@ import CTA from '../components/sections/CTA';
 
 const Home = () => {
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-primary selection:text-white">
+        <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
             <Navbar />
             <main>
                 <Hero />
