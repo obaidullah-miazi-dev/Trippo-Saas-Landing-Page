@@ -7,8 +7,8 @@ import Icon from '../shared/Icon';
 import { useReveal } from '../../hooks/useReveal';
 
 const About = () => {
-    const textRef = useReveal({ delay: 0.2, x: -30 }); // Slide from left
-    const visualRef = useReveal({ delay: 0.4, scale: 0.9 }); // Scale up
+    const textRef = useReveal({ delay: 0.2, x: -30 });
+    const visualRef = useReveal({ delay: 0.4, scale: 0.9 });
 
     return (
         <section id="about" className="py-24 bg-muted/30 relative overflow-hidden">

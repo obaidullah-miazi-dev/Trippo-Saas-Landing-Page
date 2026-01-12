@@ -14,7 +14,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-1">
                         <a href="#" className="flex items-center gap-2 mb-4">
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">
-                               <img src="trippoLogo.png" alt="" />
+                               <img src="trippoLogo.png" alt="logo" className='w-5'/>
                             </div>
                             <span className="text-xl font-bold text-foreground tracking-tight">Trippo</span>
                         </a>

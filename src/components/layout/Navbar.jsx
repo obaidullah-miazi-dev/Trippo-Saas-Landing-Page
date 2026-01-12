@@ -28,7 +28,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-2 group">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                            <img src="trippoLogo.png" alt="logo" />
+                            <img src="trippoLogo.png" alt="logo" className='w-5'/>
                         </div>
                         <span className="text-xl font-bold text-foreground tracking-tight">Trippo</span>
                     </a>
