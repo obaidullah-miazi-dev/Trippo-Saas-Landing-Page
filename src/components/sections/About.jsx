@@ -4,14 +4,18 @@ import Container from '../layout/Container';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 import Icon from '../shared/Icon';
+import { useReveal } from '../../hooks/useReveal';
 
 const About = () => {
+    const textRef = useReveal({ delay: 0.2, x: -30 }); // Slide from left
+    const visualRef = useReveal({ delay: 0.4, scale: 0.9 }); // Scale up
+
     return (
         <section id="about" className="py-24 bg-slate-900/30 relative overflow-hidden">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Content */}
-                    <div className="order-2 lg:order-1">
+                    <div ref={textRef} className="order-2 lg:order-1 opacity-0">
                         <Badge variant="secondary" className="mb-6">Our Mission</Badge>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
                             Empowering developers to build the future.
@@ -37,7 +41,7 @@ const About = () => {
                     </div>
 
                     {/* Visual */}
-                    <div className="order-1 lg:order-2 relative">
+                    <div ref={visualRef} className="order-1 lg:order-2 relative opacity-0">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900 aspect-square">
                             {/* Abstract Code/Tech Visual */}
                             <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 opacity-50"></div>

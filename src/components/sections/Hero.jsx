@@ -1,12 +1,49 @@
 // src/components/sections/Hero.jsx
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from '../../lib/gsap';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 
 const Hero = () => {
+    const containerRef = useRef(null);
+    const badgeRef = useRef(null);
+    const titleRef = useRef(null);
+    const subtitleRef = useRef(null);
+    const buttonsRef = useRef(null);
+    const visualRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+            // Initial states (hidden)
+            gsap.set([badgeRef.current, titleRef.current, subtitleRef.current, buttonsRef.current, visualRef.current], {
+                autoAlpha: 0,
+                y: 30
+            });
+            gsap.set(visualRef.current, { scale: 0.95, rotationX: 10, transformPerspective: 1000 });
+
+            tl.to(badgeRef.current, { autoAlpha: 1, y: 0, duration: 0.8 })
+                .to(titleRef.current, { autoAlpha: 1, y: 0, duration: 1 }, "-=0.6")
+                .to(subtitleRef.current, { autoAlpha: 1, y: 0, duration: 1 }, "-=0.8")
+                .to(buttonsRef.current, { autoAlpha: 1, y: 0, duration: 0.8 }, "-=0.8")
+                .to(visualRef.current, {
+                    autoAlpha: 1,
+                    y: 0,
+                    scale: 1,
+                    rotationX: 0,
+                    duration: 1.5,
+                    ease: 'power2.out'
+                }, "-=0.6");
+
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <section ref={containerRef} className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
@@ -15,25 +52,25 @@ const Hero = () => {
 
             <Container className="relative z-10">
                 <div className="text-center max-w-4xl mx-auto">
-                    <div className="mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.1s' }}>
+                    <div ref={badgeRef} className="mb-6 opacity-0">
                         <Badge variant="primary" className="px-4 py-1.5 text-sm">
                             v2.0 is now live 🚀
                         </Badge>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
+                    <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-tight opacity-0">
                         Build faster with <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                             Intelligent Tools
                         </span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
+                    <p ref={subtitleRef} className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed opacity-0">
                         Trippo provides the infrastructure you need to scale your application without the headache.
                         Focus on your code, we handle the rest.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up opacity-0" style={{ animationDelay: '0.4s' }}>
+                    <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0">
                         <Button size="lg" variant="primary">
                             Start Building Free
                         </Button>
@@ -43,7 +80,7 @@ const Hero = () => {
                     </div>
 
                     {/* Hero Image / Dashboard Preview */}
-                    <div className="mt-20 relative animate-slide-up opacity-0" style={{ animationDelay: '0.6s' }}>
+                    <div ref={visualRef} className="mt-20 relative opacity-0">
                         <div className="rounded-xl bg-slate-900/50 border border-slate-800 p-2 shadow-2xl backdrop-blur-sm">
                             <div className="rounded-lg overflow-hidden bg-slate-950 aspect-video relative">
                                 {/* Abstract UI Representation */}

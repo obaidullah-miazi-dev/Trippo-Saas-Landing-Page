@@ -2,12 +2,20 @@
 import React from 'react';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
+import { useReveal } from '../../hooks/useReveal';
 
 const CTA = () => {
+    const containerRef = useReveal({
+        scale: 0.95,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)' // Elastic pop effect
+    });
+
     return (
         <section className="py-24 relative overflow-hidden">
             <Container>
-                <div className="relative rounded-3xl bg-gradient-to-r from-primary to-secondary p-12 md:p-20 text-center overflow-hidden shadow-2xl">
+                <div ref={containerRef} className="relative rounded-3xl bg-gradient-to-r from-primary to-secondary p-12 md:p-20 text-center overflow-hidden shadow-2xl opacity-0">
                     {/* Background Pattern */}
                     <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
