@@ -11,16 +11,16 @@ const About = () => {
     const visualRef = useReveal({ delay: 0.4, scale: 0.9 }); // Scale up
 
     return (
-        <section id="about" className="py-24 bg-slate-900/30 relative overflow-hidden">
+        <section id="about" className="py-24 bg-muted/30 relative overflow-hidden">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Content */}
                     <div ref={textRef} className="order-2 lg:order-1 opacity-0">
                         <Badge variant="secondary" className="mb-6">Our Mission</Badge>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                             Empowering developers to build the future.
                         </h2>
-                        <p className="text-lg text-slate-400 mb-6 leading-relaxed">
+                        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                             We believe that deployment shouldn't be a bottleneck. That's why we built Trippo—a platform that handles the complexity of infrastructure so you can focus on creating amazing products.
                         </p>
                         <ul className="space-y-4 mb-8">
@@ -29,7 +29,7 @@ const About = () => {
                                 'Automated Scaling',
                                 'Zero-config Deployments'
                             ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-slate-300">
+                                <li key={i} className="flex items-center gap-3 text-muted-foreground">
                                     <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
                                         <Icon name="Check" className="w-4 h-4" />
                                     </div>
@@ -42,11 +42,11 @@ const About = () => {
 
                     {/* Visual */}
                     <div ref={visualRef} className="order-1 lg:order-2 relative opacity-0">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900 aspect-square">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card aspect-square">
                             {/* Abstract Code/Tech Visual */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 opacity-50"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-card to-background opacity-50"></div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-3/4 h-3/4 bg-slate-950 rounded-xl relative overflow-hidden">
+                                <div className="w-3/4 h-3/4 bg-background rounded-xl relative overflow-hidden">
                                     <img src="https://i.ibb.co.com/7NvHcvX6/ai-generated-1768181474327.jpg" alt="" />
                                     <div className="absolute bottom-6 right-6">
                                         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center animate-bounce">

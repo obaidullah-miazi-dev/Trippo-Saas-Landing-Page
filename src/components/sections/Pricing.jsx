@@ -42,7 +42,7 @@ const Pricing = () => {
     ];
 
     return (
-        <section id="pricing" className="py-24 bg-slate-950 relative">
+        <section id="pricing" className="py-24 bg-background relative">
             <Container>
                 <SectionTitle
                     title="Simple, transparent pricing"
@@ -53,7 +53,7 @@ const Pricing = () => {
                     {plans.map((plan, index) => (
                         <div key={index} className="pricing-card opacity-0 flex">
                             <Card
-                                className={`relative flex flex-col w-full ${plan.popular ? 'border-primary shadow-2xl shadow-primary/10 z-10' : 'bg-slate-900/20'}`}
+                                className={`relative flex flex-col w-full ${plan.popular ? 'border-primary shadow-2xl shadow-primary/10 z-10' : 'bg-card/20'}`}
                             >
                                 {plan.popular && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
@@ -62,17 +62,17 @@ const Pricing = () => {
                                 )}
 
                                 <div className="mb-8">
-                                    <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+                                    <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                                     <div className="flex items-baseline gap-1 mb-4">
-                                        <span className="text-4xl font-bold text-white">{plan.price}</span>
-                                        {plan.price !== 'Custom' && <span className="text-slate-500">/month</span>}
+                                        <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                                        {plan.price !== 'Custom' && <span className="text-muted-foreground">/month</span>}
                                     </div>
-                                    <p className="text-slate-400 text-sm">{plan.description}</p>
+                                    <p className="text-muted-foreground text-sm">{plan.description}</p>
                                 </div>
 
                                 <ul className="space-y-4 mb-8 flex-1">
                                     {plan.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
+                                        <li key={i} className="flex items-center gap-3 text-muted-foreground text-sm">
                                             <Icon name="Check" className="w-4 h-4 text-primary" />
                                             {feature}
                                         </li>

@@ -18,7 +18,7 @@ const SectionTitle = ({ title, subtitle, align = 'center', className = '' }) => 
                     {subtitle}
                 </span>
             )}
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 {title}
             </h2>
         </div>

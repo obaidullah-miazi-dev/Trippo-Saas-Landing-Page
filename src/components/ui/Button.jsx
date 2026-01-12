@@ -18,10 +18,10 @@ const Button = ({
     const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-950 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
     const variants = {
-        primary: "bg-primary text-white shadow-lg shadow-primary/25 border border-transparent",
-        secondary: "bg-secondary text-white shadow-lg shadow-secondary/25 border border-transparent",
-        outline: "bg-transparent text-slate-300 border border-slate-700 hover:text-white hover:bg-slate-800/50",
-        ghost: "bg-transparent text-slate-400 hover:text-white hover:bg-slate-800/50 border border-transparent",
+        primary: "bg-primary text-primary-foreground shadow-lg shadow-primary/25 border border-transparent",
+        secondary: "bg-secondary text-secondary-foreground shadow-lg shadow-secondary/25 border border-transparent",
+        outline: "bg-transparent text-muted-foreground border border-input hover:text-foreground hover:bg-accent",
+        ghost: "bg-transparent text-muted-foreground hover:text-foreground hover:bg-accent border border-transparent",
     };
 
     const sizes = {

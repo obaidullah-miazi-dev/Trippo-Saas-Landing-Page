@@ -14,7 +14,7 @@ const Testimonials = () => {
     });
 
     return (
-        <section id="testimonials" className="py-24 bg-slate-950">
+        <section id="testimonials" className="py-24 bg-background">
             <Container>
                 <SectionTitle
                     title="Loved by developers worldwide"
@@ -24,7 +24,7 @@ const Testimonials = () => {
                 <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="testimonial-card opacity-0 h-full">
-                            <Card className="flex flex-col justify-between h-full bg-slate-900/30 hover:bg-slate-900/50 transition-colors duration-300">
+                            <Card className="flex flex-col justify-between h-full bg-card/30 hover:bg-card/50 transition-colors duration-300">
                                 <div className="mb-6">
                                     <div className="flex gap-1 mb-4">
                                         {[1, 2, 3, 4, 5].map((star) => (
@@ -33,18 +33,18 @@ const Testimonials = () => {
                                             </svg>
                                         ))}
                                     </div>
-                                    <p className="text-slate-300 italic leading-relaxed">"{testimonial.quote}"</p>
+                                    <p className="text-muted-foreground italic leading-relaxed">"{testimonial.quote}"</p>
                                 </div>
 
                                 <div className="flex items-center gap-4 mt-auto">
                                     <img
                                         src={testimonial.avatar}
                                         alt={testimonial.author}
-                                        className="w-10 h-10 rounded-full border border-slate-700"
+                                        className="w-10 h-10 rounded-full border border-border"
                                     />
                                     <div>
-                                        <h4 className="text-white font-semibold text-sm">{testimonial.author}</h4>
-                                        <p className="text-slate-500 text-xs">{testimonial.role}</p>
+                                        <h4 className="text-foreground font-semibold text-sm">{testimonial.author}</h4>
+                                        <p className="text-muted-foreground text-xs">{testimonial.role}</p>
                                     </div>
                                 </div>
                             </Card>

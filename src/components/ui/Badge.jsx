@@ -6,10 +6,10 @@ import React from 'react';
  */
 const Badge = ({ children, variant = 'default', className = '' }) => {
     const variants = {
-        default: "bg-slate-800 text-slate-300 border-slate-700",
+        default: "bg-muted text-muted-foreground border-border",
         primary: "bg-primary/10 text-primary border-primary/20",
         secondary: "bg-secondary/10 text-secondary border-secondary/20",
-        outline: "bg-transparent text-slate-400 border-slate-700",
+        outline: "bg-transparent text-muted-foreground border-border",
     };
 
     return (
